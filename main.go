@@ -221,7 +221,7 @@ func main() {
 
 		cityGroup := taxonomyGroup.Group("/cities")
 		{
-			cityGroup.GET("/", interfaces.AuthMiddleware(), cityService.GetAllCities)
+			cityGroup.GET("/", cityService.GetAllCities)
 			cityGroup.GET("/:city_id", interfaces.AuthMiddleware(), cityService.GetCityByID)
 		}
 
